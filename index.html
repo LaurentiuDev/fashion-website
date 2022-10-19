@@ -5,9 +5,451 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fashion website</title>
+  <script src="https://kit.fontawesome.com/9cb176f7bd.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./assets/fonts/all.min.css">  
+  <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Fashion website</h1>
+  <div class="container">
+    <header>
+      <div class="navigation-container">
+        <div class="navigation-hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <nav class="navigation-menu-container">
+          <div class="navigation-menu-search-container">
+            <form id="navigation-menu-search-form">
+              <label for="search">Search</label>
+              <input type="search" id="search" name="search">
+            </form>
+          </div>
+          <ul class="navigation-menu-items-container">
+            <li class="navigation-menu-item has-submenu">
+              <a href="#">Women</a>
+              <ul class="navigation-sub-menu-items-container">
+                <li class="navigation-sub-menu-item">
+                  <a href="#">Derby</a>
+                </li>
+                <li class="navigation-sub-menu-item">
+                  <a href="#">Boots</a>
+                </li>
+                <li class="navigation-sub-menu-item">
+                  <a href="#">Accessories</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="navigation-menu-item has-submenu">
+              <a href="#">Men</a>
+              <ul class="navigation-sub-menu-items-container">
+                <li class="navigation-sub-menu-item">
+                  <a href="#">Derby</a>
+                </li>
+                <li class="navigation-sub-menu-item">
+                  <a href="#">Boots</a>
+                </li>
+                <li class="navigation-sub-menu-item">
+                  <a href="#">Sneakers</a>
+                </li>
+              </ul>
+            </li>
+            <li class="navigation-menu-item is-bottom">
+              <ul class="is-extra is-mobile">
+                <li><a href="#">Account</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Support</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      
+      <div class="logo-container">
+        <img src="./assets/images/logo.jpg" alt="Fashion logo" width="200" height="200">
+      </div>
+
+      <div class="cart-container">
+        <div class="cart-icon-container">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <div class="cart-dialog-container">
+          <div class="cart-dialog-title-container">
+            <h2 class="cart-dialog-title">Your Cart</h2>
+          </div>
+          <div class="cart-dialog-content-container">
+            <div class="no-content-message-container">
+              <p class="no-content-message">Your cart is empty!</p>
+            </div>
+            <div class="cart-dialog-content">
+              <div class="cart-product">
+                <div class="product-image-container">
+                  <img class="product-image" src="" alt="">
+                </div>
+                <div class="product-brand-container">
+                  <p class="product-brand">Puma</p>
+                </div>
+                <div class="product-title-container">
+                  <p class="product-title">Pantofi sport low-top de piele ecologica Rickie</p>
+                </div>
+                <div class="product-size">Masura: S</div>
+                <div class="product-bottom-details">
+                  <div class="product-quantity">
+                    <button> + </button>
+                    <input type="number" name="product-quantity" id="product-quantity">
+                    <button> - </button>
+                  </div>
+                  <div class="product-price">
+                    <span>&euro;189,95</span>
+                  </div>
+                </div>  
+              </div>
+              <hr/>
+              <div class="cart-product">
+                <div class="product-image-container">
+                  <img class="product-image" src="" alt="">
+                </div>
+                <div class="product-brand-container">
+                  <p class="product-brand">Puma</p>
+                </div>
+                <div class="product-title-container">
+                  <p class="product-title">Pantofi sport low-top de piele ecologica Rickie</p>
+                </div>
+                <div class="product-size">Masura: S</div>
+                <div class="product-bottom-details">
+                  <div class="product-quantity">
+                    <button class="increase-product-quantity-button"> + </button>
+                    <input type="number" name="product-quantity" id="product-quantity">
+                    <button class="decrease-product-quantity-button"> - </button>
+                  </div>
+                  <div class="product-price">
+                    <span>&euro;189,95</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cart-dialog-actions">
+              <div class="subtotal-container">
+                <span>Subtotal: </span><span id="subtotal-price">&euro;379,90</span>
+              </div>
+              <div class="shipping-message">
+                <p>Free express shipping on all orders.</p>
+              </div>
+              <div class="checkout-button-container">
+                <button class="checkout-button">Checkout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <a href="#collections/sale">
+          <div class="hero-image mobile-only">
+            <picture>
+              <source media="(max-width: 649px)" srcset="./assets/images/hero-650×782px.jpg"/>
+              <source media="(min-width: 650px)" srcset="./assets/images/hero-1920×1066px.jpg"/>
+              <img src="./assets/images/hero-1920×1066px.jpg" alt="Hero" width="300">
+            </picture>
+          </div>
+        </a>
+      </section>
+
+      <section class="cta-carousel-section">
+        <div class="cta-carousel-title-container">
+          <h2 class="cta-carousel-title">We are free</h2>
+        </div>
+        <div class="cta-carousel-description-container">
+          <p class="cta-carousel-description">For us, comfort is not rocket science - it is standard.</p>
+        </div>
+        <div class="cta-carousel-content">
+          <div class="cta-carousel-slide">
+            <a href="#collections/women">
+              <div class="slide-image-container">
+                <img class="slide-image" src="./assets/images/women-clothes-mobile-640×727px.jpg" alt="Woman clothes" width="300">
+              </div>
+              <div class="slide-button-container">
+                <button class="slide-button">Women</button>
+              </div>
+            </a>
+          </div>
+
+          <div class="cta-carousel-slide">
+            <a href="#collections/men">
+              <div class="slide-image-container">
+                <img class="slide-image" src="./assets/images/men-clothes-mobile-640×1011px.jpg" alt="Woman clothes" width="300">
+              </div>
+              <div class="slide-button-container">
+                <button class="slide-button">Men</button>
+              </div>
+            </a>
+          </div>
+
+          <div class="cta-carousel-slide">
+            <div class="slide-image-container">
+              <img class="slide-image" src="./assets/images/men-clothes-mobile-640×1011px.jpg" alt="Woman clothes" width="300">
+            </div>
+            <div class="slide-button-container">
+              <button class="slide-button">Sneakers</button>
+              <div class="button-group">
+                <a href="#collections/men-sneakers">Men</a>
+                <a href="#collections/women-sneakers">Women</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-media-section">
+        <div class="featured-media-content">
+          <div class="featured-media-title-container">
+            <h2 class="featured-media-title">A color for every foot</h2>
+          </div>
+          <div class="featured-media-description-container">
+            <p class="featured-media-description">
+              Our community makes us unique. 
+              They have an energy that reverberates around them. 
+              Their mission in life is to ensure the wonder in the 
+              world is not overlooked.
+            </p>
+          </div>  
+        </div>
+
+        <div class="featured-media-carousel">
+          <div class="featured-media-carousel-slides">
+            <div class="featured-media-carousel-slide">
+              <video muted loop autoplay width="300">
+                <source src="./assets/videos/video-sneakers.mp4" type="video/mp4"/>
+              </video>
+            </div>
+
+            <div class="featured-media-carousel-slide">
+              <div class="slide-image-container">
+                <img src="./assets/images/man-take-photo-309×469px.jpg" alt="Man take photo" width="300">
+              </div>
+            </div>
+
+            <div class="featured-media-carousel-slide">
+              <div class="slide-image-container">
+                <img src="./assets/images/people-group-309×469px.jpg" alt="People group" width="300">
+              </div>
+            </div>
+          </div>
+          <div class="featured-media-pagination">
+            <button class="featured-media-pagination-button">
+              <span class="featured-media-pagination-background">
+                <img src="./assets/images/circle-gradient-outline_70×70px.jpg" alt="Circle gradient outline" width="92">
+              </span>
+              <span class="featured-media-pagination-image-container">
+                <img src="./assets/images/featured-media-pagination-image-smile-girl-60×60px.jpg" alt="Featured media pagination image smile girl" width="80">
+              </span>
+            </button>
+
+            <button class="featured-media-pagination-button">
+              <span class="featured-media-pagination-background">
+                <img src="./assets/images/circle-gradient-outline_70×70px.jpg" alt="Circle gradient outline" width="92">
+              </span>
+              <span class="featured-media-pagination-image-container">
+                <img src="./assets/images/featured-media-pagination-image-black-man-60×60px.jpg" alt="Featured media pagination image black man" width="80">
+              </span>
+            </button>
+
+            <button class="featured-media-pagination-button">
+              <span class="featured-media-pagination-background">
+                <img src="./assets/images/circle-gradient-outline_70×70px.jpg" alt="Circle gradient outline" width="92">
+              </span>
+              <span class="featured-media-pagination-image-container">
+                <img src="./assets/images/featured-media-pagination-image-fashion-girl-60×60px.jpg" alt="Featured media pagination image black man" width="80">
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="featured-media-container">
+          <div class="featured-media-inner-container">
+            <div class="featured-media-gradient-container"></div>
+            <div class="featured-media-image-container">
+              <a href="#products/weekender-night-cat-6" class="responsive-image-container is-active">
+                <img src="./assets/images/weekender-night-cat-188x@2x.jpg" width="188" alt="Weekender night cat" class="featured-media-image">
+              </a>
+              <a href="#products/weekender-mens-country-club" class="responsive-image-container">
+                <img src="./assets/images/weekender-mens-country-club-188x@2x.jpg" width="188" alt="Weekender mens country club" class="featured-media-image">
+              </a>
+              <a href="#products/weekender-white-classic" class="responsive-image-container">
+                <img src="./assets/images/weekender-white-classic-188x@2x.jpg" width="188" alt="Weekender white classic" class="featured-media-image">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-recommendations-section">
+        <div class="product-recommendations-container">
+          <div class="product-recommendations-title-container">
+            <h2 class="product-recommendations-title">Recommendations for you</h2>
+          </div>
+          <div class="product-recommendations-carousel-content">
+            <div class="product-recommendations-carousel-slide">
+              <div class="product-thumbnail-wrapper">
+                <div class="product-thumbnail-container">
+                  <img src="./assets/images/weekender-cobalt-clash-H-400x400.jpg" alt="Weekender Cobalt Clash" class="product-thumbnail" width="200">
+                </div>
+                <div class="product-thumbnail-container">
+                  <img src="./assets/images/rollie-ecom-day4-shot-26-3251.jpg" alt="Weekender Cobalt Clash" class="product-thumbnail" width="200">
+                </div>
+              </div>
+              <div class="product-thumbnail-arrows">
+                <button class="product-thumbnail-arrow-left is-disabled">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="product-thumbnail-arrow-right">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+              <a href="#products/weekender">
+                <div class="product-thumbnail-title-container">
+                  <p class="product-thumbnail-title">Weekender Cobalt Clash</p>
+                  <div class="product-thumbnail-price-container">
+                    <p class="product-price">&euro;229,95</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="product-recommendations-carousel-slide">
+              <div class="product-thumbnail-wrapper">
+                <div class="product-thumbnail-container">
+                  <img src="./assets/images/derby-soft-tan.jpg" alt="Derby Soft Tan" class="product-thumbnail" width="200">
+                </div>
+                <div class="product-thumbnail-container">
+                  <img src="./assets/images/rollie-ecomm-day2-shot-10-0017.jpg" alt="Derby Soft Tan" class="product-thumbnail" width="200">
+                </div>
+              </div>
+              <div class="product-thumbnail-arrows">
+                <button class="product-thumbnail-arrow-left is-disabled">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="product-thumbnail-arrow-right">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+              <a href="#products/weekender">
+                <div class="product-thumbnail-title-container">
+                  <p class="product-thumbnail-title">Derby Soft Tan</p>
+                  <div class="product-thumbnail-price-container">
+                    <p class="product-price">&euro;189,95</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="product-recommendations-carousel-slide">
+              <div class="product-thumbnail-wrapper">
+                <div class="product-thumbnail-container">
+                  <img src="./assets/images/derby-snow-pink-400x400.jpg" alt="Derby Snow Pink" class="product-thumbnail" width="200">
+                </div>
+                <div class="product-thumbnail-container">
+                  <img src="./assets/images/day2-shot-12.jpg" alt="Derby Snow Pink" class="product-thumbnail" width="200">
+                </div>
+              </div>
+              <div class="product-thumbnail-arrows">
+                <button class="product-thumbnail-arrow-left is-disabled">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="product-thumbnail-arrow-right">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+              <a href="#products/weekender">
+                <div class="product-thumbnail-title-container">
+                  <p class="product-thumbnail-title">Derby Snow Pink</p>
+                  <div class="product-thumbnail-price-container">
+                    <p class="product-price">&euro;189,95</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            
+            <div class="product-recommendations-carousel-slide">
+              <div class="product-thumbnail-wrapper">
+                <div class="product-thumbnail-container">
+                  <img src="./assets/images/derby-navy-400x400.jpg" alt="Derby Navy" class="product-thumbnail" width="200">
+                </div>
+                <div class="product-thumbnail-container">
+                  <img src="./assets/images/day2-shot-09-007.jpg" alt="Derby Navy" class="product-thumbnail" width="200">
+                </div>
+              </div>
+              <div class="product-thumbnail-arrows">
+                <button class="product-thumbnail-arrow-left is-disabled">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="product-thumbnail-arrow-right">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+              <a href="#products/weekender">
+                <div class="product-thumbnail-title-container">
+                  <p class="product-thumbnail-title">Derby Navy</p>
+                  <div class="product-thumbnail-price-container">
+                    <p class="product-price">&euro;189,95</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter-section">
+        <div class="newsletter-image-container">
+          <img src="./assets/images/influencer-1_96x@2x.jpg" class="newsletter-image" alt="Influencer" width="96">
+        </div>
+
+        <div class="newsletter-image-container">
+          <img src="./assets/images/influencer-2_125x@2x.jpg" class="newsletter-image" alt="Influencer" width="125">
+        </div>
+
+        <div class="newsletter-image-container">
+          <img src="./assets/images/influencer-3_96x@2x.jpg" class="newsletter-image" alt="Influencer" width="96">
+        </div>
+
+        <div class="newsletter-image-container">
+          <img src="./assets/images/influencer-4_133x@2x.jpg" class="newsletter-image" alt="Influencer" width="133">
+        </div>
+
+        <div class="newsletter-cta-container">
+          <h2 class="newsletter-cta-title">Stay in touch.</h2>
+          <form id="newsletter-cta-form" >
+            <label for="email">
+              Enter email...
+              <input type="email" id="email" name="email">
+            </label>
+            <button type="submit" class="newsletter-cta-form-button">Join</button>
+          </form>
+        </div>
+
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-logo-container">
+        <img src="./assets/images/logo.jpg" alt="Fashion logo" width="200" height="200">
+      </div>
+      <div class="footer-socials-container">
+        <a href="#facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#pinterest" title="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+      </div>
+      <div class="footer-copyright-container">
+        <p class="footer-copyright">2022 Web design</p>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
