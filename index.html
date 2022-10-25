@@ -22,57 +22,89 @@
           <span></span>
         </div>
 
-        <nav class="navigation-menu-container">
-          <div class="navigation-menu-search-container">
-            <form id="navigation-menu-search-form">
-              <label for="search">Search</label>
-              <input type="search" id="search" name="search">
-            </form>
+        <nav class="navigation modal">
+          <div class="navigation-menu-container">
+            <div class="navigation-header-container">
+              <div class="navigation-logo-container">
+                <a href="index.html">
+                  <img src="./assets/images/logo.png" alt="Fashion logo" width="80">
+                </a>
+              </div>
+              <button class="navigation-close-button" onclick="onToggleNavigationModal()">
+                <i class="fa fa-close"></i>
+              </button>
+            </div>
+            <ul class="navigation-menu-items-container">
+              <li class="navigation-menu-item">
+                <div class="navigation-menu-search-container">
+                  <form id="navigation-menu-search-form">
+                    <input type="search" id="search" name="search" placeholder="Search..." required>
+                    <button type="submit" class="search-form-button">Go</button>
+                  </form>
+                </div>
+              </li>
+              <li class="navigation-menu-item has-submenu">
+                <a href="#" onclick="onToggleSubMenu('#navigation-sub-menu-1')">
+                  <span>Women</span>
+                  <i class="fas fa-angle-right"></i>
+                </a>
+                <ul class="navigation-sub-menu-items-container" id="navigation-sub-menu-1">
+                  <li class="navigation-sub-menu-item">
+                    <button class="sub-menu-back-button" onclick="onToggleSubMenu('#navigation-sub-menu-1')">
+                      <i class="fas fa-angle-left"></i>
+                      <span>Women</span>
+                    </button>
+                  </li>
+                  <li class="navigation-sub-menu-item">
+                    <a href="#">Derby</a>
+                  </li>
+                  <li class="navigation-sub-menu-item">
+                    <a href="#">Boots</a>
+                  </li>
+                  <li class="navigation-sub-menu-item">
+                    <a href="#">Accessories</a>
+                  </li>
+                </ul>
+              </li>
+  
+              <li class="navigation-menu-item has-submenu">
+                <a href="#" onclick="onToggleSubMenu('#navigation-sub-menu-2')">
+                  <span>Men</span>
+                  <i class="fas fa-angle-right"></i>
+                </a>
+                <ul class="navigation-sub-menu-items-container" id="navigation-sub-menu-2">
+                  <li class="navigation-sub-menu-item">
+                    <button class="sub-menu-back-button" onclick="onToggleSubMenu('#navigation-sub-menu-2')">
+                      <i class="fas fa-angle-left"></i>
+                      <span>Men</span>
+                    </button>
+                  </li>
+                  <li class="navigation-sub-menu-item">
+                    <a href="#">Derby</a>
+                  </li>
+                  <li class="navigation-sub-menu-item">
+                    <a href="#">Boots</a>
+                  </li>
+                  <li class="navigation-sub-menu-item">
+                    <a href="#">Sneakers</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="navigation-menu-item is-bottom">
+                <ul class="is-extra is-mobile">
+                  <li><a href="#">Account</a></li>
+                  <li><a href="#">About us</a></li>
+                  <li><a href="#">Support</a></li>
+                </ul>
+              </li>
+            </ul>
           </div>
-          <ul class="navigation-menu-items-container">
-            <li class="navigation-menu-item has-submenu">
-              <a href="#">Women</a>
-              <ul class="navigation-sub-menu-items-container">
-                <li class="navigation-sub-menu-item">
-                  <a href="#">Derby</a>
-                </li>
-                <li class="navigation-sub-menu-item">
-                  <a href="#">Boots</a>
-                </li>
-                <li class="navigation-sub-menu-item">
-                  <a href="#">Accessories</a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="navigation-menu-item has-submenu">
-              <a href="#">Men</a>
-              <ul class="navigation-sub-menu-items-container">
-                <li class="navigation-sub-menu-item">
-                  <a href="#">Derby</a>
-                </li>
-                <li class="navigation-sub-menu-item">
-                  <a href="#">Boots</a>
-                </li>
-                <li class="navigation-sub-menu-item">
-                  <a href="#">Sneakers</a>
-                </li>
-              </ul>
-            </li>
-            <li class="navigation-menu-item is-bottom">
-              <ul class="is-extra is-mobile">
-                <li><a href="#">Account</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Support</a></li>
-              </ul>
-            </li>
-          </ul>
         </nav>
       </div>
       
       <div class="logo-container">
         <a href="index.html">
-          <img src="./assets/images/logo.png" alt="Fashion logo" width="80" height="80">
+          <img src="./assets/images/logo.png" alt="Fashion logo" width="80">
         </a>
       </div>
 
