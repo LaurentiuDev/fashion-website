@@ -13,6 +13,7 @@ const onScroll = () => {
   if (scroll < 200) {
     header.classList.remove("is-visible");
     header.classList.remove("is-waiting");
+    header.style.background = "transparent";
     if (scroll > 50) {
       header.classList.add("is-sticky");
     } else {
@@ -26,6 +27,7 @@ const onScroll = () => {
       currentScroll = scroll;
     } else {
       header.classList.add("is-visible");
+      header.style.background = "#fafafa";
       currentScroll = scroll;
     }
   }
@@ -56,8 +58,14 @@ const onToggleSubMenu = (subMenuReference) => {
 /**
  * Toggle navigation modal
  */
-const onToggleNavigationModal = () => {
-  const modal = document.querySelector(".navigation.modal");
+const onToggleModal = (modalReference) => {
+  const modal = document.querySelector(modalReference);
+
+  const header = document.querySelector("header");
+
+  if (!header) {
+    throw "'header' not found!";
+  }
 
   if (!modal) {
     throw "'modal' not found!";
@@ -73,6 +81,9 @@ const onToggleNavigationModal = () => {
     backdropElement.remove();
     modal.classList.remove("is-mobile-menu-open");
     document.body.style.overflow = "auto";
+    if (header.classList.contains("is-sticky")) {
+      header.style.background = "#fafafa";
+    }
   } else {
     const backdrop = document.createElement("div");
     document.body.appendChild(backdrop);
@@ -80,12 +91,6 @@ const onToggleNavigationModal = () => {
     backdrop.classList.add("backdrop");
     modal.classList.add("is-mobile-menu-open");
     document.body.style.overflow = "hidden";
+    header.style.background = "transparent";
   }
 }
-
-const navigationHamburgerIcon = document
-  .querySelector(".navigation-hamburger-icon");
-
-// Add event to hamburger icon 
-navigationHamburgerIcon
-  .addEventListener('click', onToggleNavigationModal);

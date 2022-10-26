@@ -16,11 +16,11 @@
   <div class="container">
     <header>
       <div class="navigation-container">
-        <div class="navigation-hamburger-icon">
+        <button class="navigation-hamburger-button" onclick="onToggleModal('.navigation.modal')">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
 
         <nav class="navigation modal">
           <div class="navigation-menu-container">
@@ -30,7 +30,7 @@
                   <img src="./assets/images/logo.png" alt="Fashion logo" width="80">
                 </a>
               </div>
-              <button class="navigation-close-button" onclick="onToggleNavigationModal()">
+              <button class="navigation-close-button" onclick="onToggleModal('.navigation.modal')">
                 <i class="fa fa-close"></i>
               </button>
             </div>
@@ -109,16 +109,25 @@
       </div>
 
       <div class="cart-container">
-        <div class="cart-icon-container">
+        <div class="cart-icon-container" onclick="onToggleModal('.cart-dialog-container')">
           <i class="fa-solid fa-cart-shopping"></i>
         </div>
         <div class="cart-dialog-container">
-          <div class="cart-dialog-title-container">
-            <h2 class="cart-dialog-title">Your Cart</h2>
+          <div class="cart-dialog-header">
+            <div class="cart-dialog-title-container">
+              <h2 class="cart-dialog-title">Your Cart</h2>
+            </div>
+            <button class="cart-close-button" onclick="onToggleModal('.cart-dialog-container')">
+              <i class="fa fa-close"></i>
+            </button>
           </div>
           <div class="cart-dialog-content-container">
             <div class="no-content-message-container">
               <p class="no-content-message">Your cart is empty!</p>
+              <div class="cart-no-content-links">
+                <a href="#collections/womens">Shop Womens</a>
+                <a href="#collections/men">Shop mens</a>
+              </div>
             </div>
             <div class="cart-dialog-content">
               <div class="cart-product">

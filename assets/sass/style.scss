@@ -42,7 +42,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 2;
+  z-index: 100;
   position: absolute;
   top: 0;
   left: 0;
@@ -69,7 +69,7 @@ header {
     }
     .navigation-container {
       margin-left: 1rem;
-      .navigation-hamburger-icon {
+      .navigation-hamburger-button {
         padding: 1.5rem;
         span {
           background: #15151f;
@@ -78,9 +78,11 @@ header {
     }
     .cart-container {
       margin-right: 1rem;
-      padding: 1.5rem;
-      .cart-icon-container > i {
-        color: #15151f;
+      .cart-icon-container {
+        padding: 1.5rem;
+        i {
+          color: #15151f;
+        }
       }
     }
   }
@@ -90,10 +92,12 @@ header {
   }
 
   .navigation-container {
-    .navigation-hamburger-icon {
+    .navigation-hamburger-button {
       display: block;
       cursor: pointer;
       padding: 2rem;
+      background: transparent;
+      border: none;
       span {
         display: block;
         width: 1.5rem;
@@ -110,17 +114,19 @@ header {
       top: 1.5rem;
       left: 1.5rem;
       border-radius: 1.5rem;
-      z-index: 310;
-      height: calc(100vh - 5rem);
+      z-index: -1;
+      height: 0;
       overflow: hidden;
       opacity: 0;
       pointer-events: none;
       transition-timing-function: linear ;
-      transition-duration: 0.2s;
+      transition-duration: 0.4s;
       transition-property: opacity;
       &.is-mobile-menu-open {
         opacity: 1;
         pointer-events: auto;
+        z-index: 310;
+        height: calc(100vh - 5rem);
       }
       .navigation-menu-container {
         display: flex;
@@ -288,13 +294,101 @@ header {
   .cart-container {
     display: block;
     cursor: pointer;
-    padding: 2rem;
-    .cart-icon-container > i {
-      font-size: 1.2rem;
-      color: #fafafa;
+    .cart-icon-container {
+      padding: 2rem;
+      i {
+        font-size: 1.2rem;
+        color: #fafafa;
+      }
     }
     .cart-dialog-container {
-      display: none;
+      position: fixed;
+      background-color: #fafafa;
+      width: calc(100% - 3rem);
+      top: 1.5rem;
+      left: 1.5rem;
+      border-radius: 1.5rem;
+      z-index: -1;
+      overflow: hidden;
+      opacity: 0;
+      height: 0;
+      transition-timing-function: linear ;
+      transition-duration: 0.4s;
+      transition-property: opacity, display;
+      &.is-mobile-menu-open {
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 310;
+        height: calc(100vh - 5rem);
+      }
+      .cart-dialog-header {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding: 1.5rem 0;
+        .cart-dialog-title-container {
+          .cart-dialog-title {
+            font-size: 1.2rem;
+            line-height: 1.5;
+          }
+        }
+        .cart-close-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 0.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 3rem;
+          height: 3rem;
+          cursor: pointer;
+          background: transparent;
+          border: none;
+          padding: 0;
+          font-size: 1.2rem;
+        }
+      }
+      .cart-dialog-content-container {
+        .no-content-message-container {
+          text-align: center;
+          .no-content-message {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+            text-align: center;
+          }
+          .cart-no-content-links {
+            display: inline-grid;
+            grid-auto-flow: row;
+            gap: 1rem;
+            a {
+              background-color: #15151f;
+              color: #fafafa;
+              font-size: 1rem;
+              line-height: 1.5;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              padding: 0.75rem 2rem;
+              border-radius: 3rem;
+              cursor: pointer;
+              max-width: 11rem;
+              text-decoration: none;
+              &:hover {
+                background-color: #606067;
+              }
+            }
+          }
+        }
+      }
+      .cart-dialog-content {
+        display: none;
+      }
+      .cart-dialog-actions {
+        display: none;
+      }
     }
   }
 }
